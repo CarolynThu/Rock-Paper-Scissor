@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="En"
+	<head>
+		<meta charset="UTF-8">
+		<link href="normalize.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="rock_paper_scissor.css">
+		<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="animate.min.css">
+		<title>Rock Paper Scissors</title>
+	</head>
+	<body>
+		<h2> Rock Paper Scissor</h2>
+			<div class="rock" id="rock"><img src="/Users/CarolynNguyen/Documents/GA_projects/rock_paper_scissor/rock.png"/>
+			</div>
+			<div class="paper" id="paper"><img src="/Users/CarolynNguyen/Documents/GA_projects/rock_paper_scissor/paper.png"/>
+			</div>
+			<div class="scissor" id="scissor"><img src="/Users/CarolynNguyen/Documents/GA_projects/rock_paper_scissor/scissor.png"/>
+			</div>
+			
+			
+			
+
+	</body>
+	<script type="text/javascript">
+
+	
+	
+window.onload = function() {
+	function greeting() {
+		alert("Lets Battle!");
+	}
+
+	greeting();
+	var userchoice = 0
+	var computerRandom = 0
+	
+var computerChoice = function() {
+		computerRandom = Math.floor(Math.random() * 3) + 1;
+		if (computerRandom == 1) {
+				console.log(computerRandom)
+				computerRandom = "rock";
+		} else if (computerRandom == 2) {
+				console.log(computerRandom);
+				computerRandom = "paper";
+		} else {
+				computerRandom = "scissor";
+		} 
+		return computerRandom;
+};
+
+var gameCompare = function(choice1, choice2) {
+	if (choice1 === choice2) {
+			alert("Draw! Let's do another!");
+			console.log("Draw! Let's do another!");
+	} else if (choice1 === "rock") {
+		if (choice2 === "scissors") {
+			alert("Rock smashes scissors!");
+			console.log("Rock smashes scissors!")
+		} else {
+			alert("Paper covers rock!");
+    }
+  } else if (choice1 === "paper") {
+		if (choice2 === "rock") {
+			alert("Paper covers rock!");
+		} else {
+			alert("Scissors cuts paper!");
+    }
+  } else if (choice1 === "scissor") {
+		if (choice2 === "paper") {
+			alert("scissors cuts paper!");
+		} else {
+			alert("Rock smashes scissors!");
+    }
+
+  }
+};
+
+// document.getElementById("rock").addEventListener('click', function() {
+// 	  userchoice = "rock"
+// 	  var cpu = 
+//  	  alert("SOMETHING");
+//  	}, false);
+
+	document.getElementById("rock").onclick = function() {
+	userchoice = "rock";
+	console.log(userchoice);
+	gameCompare(userchoice,computerChoice());}
+
+	document.getElementById("paper").onclick = function() {
+	userchoice = "paper";
+	console.log(userchoice);
+	gameCompare(userchoice,computerChoice());}
+
+	document.getElementById("scissor").onclick = function() {
+	userchoice = "scissor";
+	console.log(userchoice);
+	gameCompare(userchoice,computerChoice());}
+	}
+
+	</script>
+</html>
